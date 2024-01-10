@@ -1,11 +1,9 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class ServoBucket {
+public class ServoDrone {
     public Servo servo;
 
     public void runServo(boolean a, boolean b, boolean x) {
@@ -23,7 +21,7 @@ public class ServoBucket {
 
     public void init(HardwareMap hardwareMap) {
 
-        servo = hardwareMap.get(Servo.class,"servo");
+        servo = hardwareMap.get(Servo.class,"servodrone");
     }
 
 

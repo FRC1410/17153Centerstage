@@ -14,13 +14,10 @@ public class Intake {
 
     public void run(double Intake, double outake) {
 
-        intake.setPower((Intake * 0.5) - outake );
+        intake.setPower(Intake - outake );
 
 
     }
 
-    //public void BasicIntake(double speed ){
 
-    //Intake.setPower(speed);
-    //}
 }
