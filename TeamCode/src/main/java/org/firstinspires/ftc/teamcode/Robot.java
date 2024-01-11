@@ -7,13 +7,17 @@ import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
 import org.firstinspires.ftc.teamcode.SubSystems.ClimbingMec;
 import org.firstinspires.ftc.teamcode.SubSystems.ServoDrone;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
+import org.firstinspires.ftc.teamcode.SubSystems.Camera;
 
+import org.firstinspires.ftc.robotcore.external.hardware.camera.controls.ExposureControl;
 @TeleOp
 public class Robot extends OpMode {
 
     Drivetrain drivetrain = new Drivetrain();
     ClimbingMec elevator = new ClimbingMec();
     ServoDrone servodrone = new ServoDrone();
+
+    Camera camera = new Camera();
 
     Intake intake = new Intake();
 
@@ -26,6 +30,7 @@ public class Robot extends OpMode {
         elevator.init(hardwareMap);
         servodrone.init(hardwareMap);
         intake.init(hardwareMap);
+
     }
 
 
