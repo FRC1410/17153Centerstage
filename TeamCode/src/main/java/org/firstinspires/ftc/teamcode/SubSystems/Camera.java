@@ -200,6 +200,7 @@ public class Camera extends LinearOpMode
                             input.rows()*(3f/4f)),
                     new Scalar(0, 255, 0), 4);
 
+
             /**
              * NOTE: to see how to get data from your pipeline to your OpMode as well as how
              * to change which stage of the pipeline is rendered to the viewport when it is
