@@ -19,6 +19,7 @@ public class Camera extends LinearOpMode
 {
     OpenCvWebcam webcam;
 
+
     @Override
     public void runOpMode()
     {
