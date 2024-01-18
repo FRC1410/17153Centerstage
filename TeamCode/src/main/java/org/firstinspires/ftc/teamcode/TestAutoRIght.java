@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 
 //This Is DriveTrain Code but with Autonomous
 
-@Autonomous(name="Robot: DriveTrain", group="Auto")
+//@Autonomous(name="Robot: DriveTrain", group="Auto")
 
 public class TestAutoRIght extends LinearOpMode {
 

@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 
 //This Is DriveTrain Code but with Autonomous
 
-//@Autonomous(name="Robot: Auto For DriveTrain", group="Auto")
+@Autonomous(name="Robot: Auto For DriveTrain", group="Auto")
 
 public class AutoDrivetrain extends LinearOpMode {
 
@@ -19,6 +19,12 @@ public class AutoDrivetrain extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+
+
+
+
+
+
         drivetrain.init(hardwareMap);
         intake.init(hardwareMap);
 
@@ -27,18 +33,18 @@ public class AutoDrivetrain extends LinearOpMode {
         while(opModeIsActive()){
 
             //go foward to put pixle next by object
-            drivetrain.drive( .4,0,0);
-            Thread.sleep(1000);
+            drivetrain.drive( -.4,0,0);
+            Thread.sleep(1950);
             drivetrain.drive(0,0,0);
 
             //put pixle next by object
-            intake.run(1,0);
+            intake.run(-0.2,0);
             Thread.sleep(500);
             intake.run(0,0);
 
             //little bit back
-            drivetrain.drive( -.4,0,0);
-            Thread.sleep(500);
+            drivetrain.drive( .4,0,0);
+            Thread.sleep(1000);
             drivetrain.drive(0,0,0);
 
             //mvoe side
@@ -47,14 +53,10 @@ public class AutoDrivetrain extends LinearOpMode {
             drivetrain.drive(0,0,0);
 
             // 90degree rotation heading to bord area
-            drivetrain.drive( .4,0,.4);
-            Thread.sleep(1000);
+            drivetrain.drive( 0,0,.4);
+            Thread.sleep(1350);
             drivetrain.drive(0,0,0);
 
-            // go forward
-            drivetrain.drive( .4,0,0);
-            Thread.sleep(1000);
-            drivetrain.drive(0,0,0);
         }
     }
 }
