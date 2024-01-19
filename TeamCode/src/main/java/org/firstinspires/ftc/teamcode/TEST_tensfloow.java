@@ -62,7 +62,6 @@ public class TEST_tensfloow extends LinearOpMode {
     // Define the labels recognized in the model for TFOD (must be in training order!)
     private static final String[] LABELS = {
             "BlueObject",
-
     };
 
     /**
@@ -198,13 +197,13 @@ public class TEST_tensfloow extends LinearOpMode {
             telemetry.addData("- Size", "%.0f x %.0f", recognition.getWidth(), recognition.getHeight());
 
             if (firstchack ==true ){
-                if (x <= -0.5 ) {
+                if (x <= 150 ) {
                     position = "Left";
                 }
-                else if (x >= -0.5 && x <= 0.5 ) {
+                else if (x >= 150 && x <= 400 ) {
                     position = "Center";
                 }
-                else if (x >= 0.5 ) {
+                else if (x >= 400 ) {
                     position = "Right";
                 }
 

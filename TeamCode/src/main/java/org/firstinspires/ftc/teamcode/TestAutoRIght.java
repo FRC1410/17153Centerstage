@@ -25,43 +25,38 @@ public class TestAutoRIght extends LinearOpMode {
         waitForStart();
 
         while(opModeIsActive()){
-            //drivetrain.EncoderDrive(.3, 1000, 1000, 1000, 1000);
-            //drivetrain.EncoderDrive(0, 0, 0, 0, 0);
-
             //go foward to put pixle next by object
             drivetrain.drive( -.4,0,0);
-            Thread.sleep(500);
+            Thread.sleep(1650);
             drivetrain.drive(0,0,0);
+
+            drivetrain.drive( 0,0,-.4);
+            Thread.sleep(1350);
+            drivetrain.drive(0,0,0);
+            drivetrain.drive( -.2,0,0);
+            Thread.sleep(800);
+            drivetrain.drive( .2,0,0);
+            Thread.sleep(800);
+            drivetrain.drive(0,0,0);
+
             //put pixle next by object
-            intake.run(1,0);
+            intake.run(0.35,0);
             Thread.sleep(2000);
             intake.run(0,0);
 
             //little bit back
             drivetrain.drive( .4,0,0);
-            Thread.sleep(250);
-            drivetrain.drive(0,0,0);
-
-            //mvoe side
-            drivetrain.drive( 0,.4,0);
             Thread.sleep(1000);
             drivetrain.drive(0,0,0);
 
-            // 90degree rotation heading to bord area
             drivetrain.drive( 0,0,.4);
-            Thread.sleep(1200);
+            Thread.sleep(2700);
             drivetrain.drive(0,0,0);
 
-            drivetrain.drive( -.4,0,0);
-            Thread.sleep(1200);
-            drivetrain.drive(0,0,0);
-
-            // go forward
-
-//
-//            intake.run(1,0);
-//            Thread.sleep(5000);
-//            intake.run(0,0);
+//            // 90degree rotation heading to bord area
+//            drivetrain.drive( 0,0,.4);
+//            Thread.sleep(1350);
+//            drivetrain.drive(0,0,0);
             terminateOpModeNow();
         }
     }
