@@ -100,18 +100,15 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
                 Thread.sleep(2000);
                 intake.run(0, 0);
 
-                //little bit back
-                drivetrain.drive(.4, 0, 0);
-                Thread.sleep(800);
-                drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(0, 0, .4);
-                Thread.sleep(2700);
-                drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive( 0,.4,0);
-                Thread.sleep(800);
+                Thread.sleep(2000);
                 drivetrain.drive(0,0,0);
+
+                drivetrain.drive(.4, 0, 0);
+                Thread.sleep(1650);
+                drivetrain.drive(0, 0, 0);
 //            // 90degree rotation heading to bord area
 //            drivetrain.drive( 0,0,.4);
 //            Thread.sleep(1350);
@@ -125,24 +122,30 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
                 drivetrain.drive(0,0,0);
 
                 //put pixle next by object
-                intake.run(-0.2,0);
-                Thread.sleep(500);
+                intake.run(0.2,0);
+                Thread.sleep(2000);
                 intake.run(0,0);
+
+
+
+
 
                 //little bit back
                 drivetrain.drive( .4,0,0);
                 Thread.sleep(1000);
                 drivetrain.drive(0,0,0);
 
-                //mvoe side
-                drivetrain.drive( 0,.4,0);
-                Thread.sleep(1000);
-                drivetrain.drive(0,0,0);
 
                 // 90degree rotation heading to bord area
                 drivetrain.drive( 0,0,.4);
                 Thread.sleep(1350);
                 drivetrain.drive(0,0,0);
+
+                drivetrain.drive(.4, 0, 0);
+                Thread.sleep(1650);
+                drivetrain.drive(0, 0, 0);
+
+
             }
            else if (firstPosition.equals("Left")) {
                 //go foward to put pixle next by object
@@ -167,14 +170,21 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
                 Thread.sleep(2000);
                 intake.run(0, 0);
 
-                //little bit back
-                drivetrain.drive(.4, 0, 0);
-                Thread.sleep(300);
+
+
+
+                drivetrain.drive(0, 0, .4);
+                Thread.sleep(2700);
                 drivetrain.drive(0, 0, 0);
+
 
                 drivetrain.drive( 0,.4,0);
                 Thread.sleep(800);
                 drivetrain.drive(0,0,0);
+
+                drivetrain.drive(.4, 0, 0);
+                Thread.sleep(1650);
+                drivetrain.drive(0, 0, 0);
 
 
             }
