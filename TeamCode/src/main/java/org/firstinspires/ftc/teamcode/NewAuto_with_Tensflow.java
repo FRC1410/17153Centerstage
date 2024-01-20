@@ -16,7 +16,7 @@ import java.util.List;
 
 //This Is DriveTrain Code but with Autonomous
 
-@Autonomous(name="Robot: Auto For DriveTrain", group="Auto")
+@Autonomous(name="Robot: Auto For Red", group="Auto")
 
 public class NewAuto_with_Tensflow extends LinearOpMode {
 
@@ -29,7 +29,7 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
 
     private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/CenterStage.tflite";
     private static final String[] LABELS = {
-            "BlueObject",
+            "RedObject",
     };
 
     private TfodProcessor tfod;
@@ -80,35 +80,53 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
 
                 //go foward to put pixle next by object
                 drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1650);
+                Thread.sleep(1750);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, .4);
-                Thread.sleep(1350);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(-.2, 0, 0);
-                Thread.sleep(800);
+                Thread.sleep(900);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(.2, 0, 0);
-                Thread.sleep(800);
+                Thread.sleep(900);
                 drivetrain.drive(0, 0, 0);
 
-                //put pixle next by object
-                intake.run(0.35, 0);
-                Thread.sleep(2000);
-                intake.run(0, 0);
+//                //put pixle next by object
+//                intake.run(0.5, 0);
+//                Thread.sleep(1500);
+//                intake.run(0, 0);
+
+
+
+
+
+                drivetrain.drive(.4, 0, 0);
+                Thread.sleep(100);
+                drivetrain.drive(0, 0, 0);
 
 
 
                 drivetrain.drive( 0,.4,0);
-                Thread.sleep(2000);
+                Thread.sleep(1700);
                 drivetrain.drive(0,0,0);
 
-                drivetrain.drive(.4, 0, 0);
-                Thread.sleep(1650);
+
+
+                drivetrain.drive(-.4, 0, 0);
+                Thread.sleep(1950);
                 drivetrain.drive(0, 0, 0);
+
+
+                intake.run(0.5, 0);
+                Thread.sleep(2000);
+                intake.run(0, 0);
+
+                terminateOpModeNow();
+
 //            // 90degree rotation heading to bord area
 //            drivetrain.drive( 0,0,.4);
 //            Thread.sleep(1350);
@@ -118,13 +136,13 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
 
            else if (firstPosition.equals("Center")) {
                 drivetrain.drive( -.4,0,0);
-                Thread.sleep(1950);
+                Thread.sleep(1800);
                 drivetrain.drive(0,0,0);
 
-                //put pixle next by object
-                intake.run(0.2,0);
-                Thread.sleep(2000);
-                intake.run(0,0);
+//                //put pixle next by object
+//                intake.run(0.5,0);
+//                Thread.sleep(1200);
+//                intake.run(0,0);
 
 
 
@@ -132,60 +150,73 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
 
                 //little bit back
                 drivetrain.drive( .4,0,0);
-                Thread.sleep(1000);
+                Thread.sleep(1800);
                 drivetrain.drive(0,0,0);
+
 
 
                 // 90degree rotation heading to bord area
                 drivetrain.drive( 0,0,.4);
-                Thread.sleep(1350);
+                Thread.sleep(1470);
                 drivetrain.drive(0,0,0);
 
-                drivetrain.drive(.4, 0, 0);
-                Thread.sleep(1650);
+                drivetrain.drive(-.4, 0, 0);
+                Thread.sleep(1850);
                 drivetrain.drive(0, 0, 0);
+
+                intake.run(0.5, 0);
+                Thread.sleep(2000);
+                intake.run(0, 0);
+
+                terminateOpModeNow();
 
 
             }
            else if (firstPosition.equals("Left")) {
                 //go foward to put pixle next by object
                 drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1650);
+                Thread.sleep(1800);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, -.4);
-                Thread.sleep(1350);
+                Thread.sleep(1450);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(-.2, 0, 0);
-                Thread.sleep(800);
+                Thread.sleep(900);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(.2, 0, 0);
-                Thread.sleep(800);
+                Thread.sleep(900);
                 drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
-                intake.run(0.35, 0);
-                Thread.sleep(2000);
+                intake.run(0.5, 0);
+                Thread.sleep(1500);
                 intake.run(0, 0);
 
 
-
+                drivetrain.drive(.4, 0, 0);
+                Thread.sleep(100);
+                drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, .4);
-                Thread.sleep(2700);
+                Thread.sleep(2800);
                 drivetrain.drive(0, 0, 0);
 
-
-                drivetrain.drive( 0,.4,0);
-                Thread.sleep(800);
-                drivetrain.drive(0,0,0);
-
-                drivetrain.drive(.4, 0, 0);
-                Thread.sleep(1650);
+                drivetrain.drive(0, 0.4, 0);
+                Thread.sleep(1850);
                 drivetrain.drive(0, 0, 0);
 
+                drivetrain.drive(-.4, 0, 0);
+                Thread.sleep(2000);
+                drivetrain.drive(0, 0, 0);
+
+                terminateOpModeNow();
+//                //put pixle next by object
+//                intake.run(0.7, 0);
+//                Thread.sleep(2000);
+//                intake.run(0, 0);
 
             }
             visionPortal.close();
