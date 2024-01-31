@@ -1,19 +1,21 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Auto;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
+import org.firstinspires.ftc.teamcode.Auto.oder.Constants;
 import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
+import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
-
+import static org.firstinspires.ftc.teamcode.Auto.oder.Constants.*;
 
 //This Is DriveTrain Code but with Autonomous
 
-//@Autonomous(name="Robot: Auto For DriveTrain", group="Auto")
+@Autonomous(name="Robot: Auto For DriveTrain l", group="Auto")
 
-public class TestAutoCenter extends LinearOpMode {
+public class AutoDrivetrain extends LinearOpMode {
 
-    Drivetrain drivetrain = new Drivetrain();
+    DrivetrainForAuto drivetrainForAuto = new DrivetrainForAuto();
     Intake intake = new Intake();
 
 
@@ -24,38 +26,46 @@ public class TestAutoCenter extends LinearOpMode {
 
 
 
-
-        drivetrain.init(hardwareMap);
+        drivetrainForAuto.init(hardwareMap);
         intake.init(hardwareMap);
 
         waitForStart();
 
         while(opModeIsActive()){
+            //Strafe positive is Right
+
+            drivetrainForAuto.drive( 0 ,Right_Speed ,0);
+            Thread.sleep(800);
+            drivetrainForAuto.drive(0,0,0);
+
 
             //go foward to put pixle next by object
-            drivetrain.drive( -.4,0,0);
-            Thread.sleep(1950);
-            drivetrain.drive(0,0,0);
+            drivetrainForAuto.drive( Forward_Speed,0,0);
+            Thread.sleep(1500);
+            drivetrainForAuto.drive(0,0,0);
 
-            //put pixle next by object
-            intake.run(-0.2,0);
-            Thread.sleep(500);
-            intake.run(0,0);
 
-            //little bit back
-            drivetrain.drive( .4,0,0);
-            Thread.sleep(1000);
-            drivetrain.drive(0,0,0);
+            intake.runForAuto(0, OuttakeSpeed);
+            Thread.sleep(800);
+            intake.runForAuto(0, 0);
 
-            //mvoe side
-            drivetrain.drive( 0,.4,0);
-            Thread.sleep(1000);
-            drivetrain.drive(0,0,0);
 
-            // 90degree rotation heading to bord area
-            drivetrain.drive( 0,0,.4);
-            Thread.sleep(1350);
-            drivetrain.drive(0,0,0);
+            drivetrainForAuto.drive(Back_Speed,0,0);
+            Thread.sleep(1200);
+            drivetrainForAuto.drive(0,0,0);
+
+
+            drivetrainForAuto.drive(0,0,Rotation_Right_Speed);
+            Thread.sleep(1200);
+            drivetrainForAuto.drive(0,0,0);
+
+
+            terminateOpModeNow();
+//            // 90degree rotation heading to bord area
+//            drivetrain.drive( 0,0,.4);
+//            Thread.sleep(1350);
+//            drivetrain.drive(0,0,0);
+
 
         }
     }

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Auto;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -11,7 +11,7 @@ import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 
 //@Autonomous(name="Robot: Auto For DriveTrain", group="Auto")
 
-public class AutoDrivetrain extends LinearOpMode {
+public class EncoordingAutoRedTop extends LinearOpMode {
 
     Drivetrain drivetrain = new Drivetrain();
     Intake intake = new Intake();

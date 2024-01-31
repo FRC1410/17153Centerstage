@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.SubSystems.ClimbingMec;
 import org.firstinspires.ftc.teamcode.SubSystems.ServoDrone;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 import org.firstinspires.ftc.teamcode.SubSystems.Camera;
-
+import org.firstinspires.ftc.teamcode.SubSystems.tesat_backet;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.controls.ExposureControl;
 @TeleOp
 public class Robot extends OpMode {
@@ -21,6 +21,8 @@ public class Robot extends OpMode {
 
     Intake intake = new Intake();
 
+    tesat_backet tesat_backet= new tesat_backet();
+
 
 
 
@@ -30,14 +32,16 @@ public class Robot extends OpMode {
         elevator.init(hardwareMap);
         servodrone.init(hardwareMap);
         intake.init(hardwareMap);
-
+        //tesat_backet.init(hardwareMap);
     }
 
 
     @Override
     public void loop() {
         drivetrain.drive(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
-        elevator.runElevator(gamepad2.left_stick_y);
+        elevator.runElevator(gamepad2.left_stick_y,gamepad2.right_stick_y);
+        //tesat_backet.runElevator(gamepad1.a, gamepad1.b);
+
         servodrone.runServo(gamepad2.a,gamepad2.b,gamepad2.x);
         intake.run(gamepad1.left_trigger,gamepad1.right_trigger);
 

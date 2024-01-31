@@ -1,16 +1,18 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
-public class Drivetrain {
+public class DrivetrainForAuto {
 
-    DcMotor motorFrontLeft;
+    DcMotorEx motorFrontLeft;
 
-    DcMotor motorFrontRight;
-    DcMotor motorBackRight;
-    DcMotor motorBackLeft;
+
+    DcMotorEx motorFrontRight;
+    DcMotorEx motorBackRight;
+    DcMotorEx motorBackLeft;
 
 
 
@@ -20,14 +22,22 @@ public class Drivetrain {
 
 
 
-        motorFrontLeft = hardwareMap.dcMotor.get("motorFrontLeft");
-        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorFrontRight = hardwareMap.dcMotor.get("motorFrontRight");
-        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorBackRight = hardwareMap.dcMotor.get("motorBackRight");
-        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorBackLeft = hardwareMap.dcMotor.get("motorBackLeft");
-        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorFrontLeft = hardwareMap.get(DcMotorEx.class, "motorFrontLeft");//hardwareMap.dcMotor.get("motorFrontLeft");
+        motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
+        motorFrontRight = hardwareMap.get(DcMotorEx.class, "motorFrontRight");
+        motorFrontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
+        motorBackRight = hardwareMap.get(DcMotorEx.class, "motorBackRight");
+        motorBackRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
+        motorBackLeft = hardwareMap.get(DcMotorEx.class, "motorBackLeft");
+        motorBackLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
 
     }
 
@@ -61,6 +71,18 @@ public class Drivetrain {
     public void drive(double forwardBackwardMovement, double strafe, double rotation) {
 
 
+        double motorVelocity = 10;
+
+
+
+        motorFrontLeft.setVelocity(motorVelocity);
+
+        motorFrontRight.setVelocity(motorVelocity);
+
+        motorBackRight.setVelocity(motorVelocity);
+
+        motorBackLeft.setVelocity(motorVelocity);
+
         //First motor - Front Left
         motorFrontLeft.setPower(forwardBackwardMovement - strafe - rotation);
 
@@ -73,13 +95,14 @@ public class Drivetrain {
         //Fourth Motor - Back Right
         motorBackRight.setPower(forwardBackwardMovement - strafe + rotation);
 
-        if(forwardBackwardMovement < .05 && strafe < 0.05 && rotation < .05) {
+        if (forwardBackwardMovement < .05 && strafe < 0.05 && rotation < .05) {
             motorFrontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
             motorFrontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
             motorBackLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
             motorBackRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         }
     }
+}
 
 //   public void BasicDrive(double speed ){
 //        motorFrontLeft.setPower(speed);
@@ -121,12 +144,4 @@ public class Drivetrain {
 //        motorBackRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 //        motorBackLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 //    }
-
-
-
-
-
-}
-
-
 

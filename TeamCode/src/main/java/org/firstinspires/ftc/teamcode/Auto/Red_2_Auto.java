@@ -1,4 +1,5 @@
-package org.firstinspires.ftc.teamcode;
+
+package org.firstinspires.ftc.teamcode.Auto;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -7,6 +8,7 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.BuiltinCameraDir
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
+import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.tfod.TfodProcessor;
@@ -16,11 +18,11 @@ import java.util.List;
 
 //This Is DriveTrain Code but with Autonomous
 
-@Autonomous(name="Robot: Auto For Red", group="Auto")
+@Autonomous(name="Robot:Auto Red_Botom", group="Auto")
 
-public class NewAuto_with_Tensflow extends LinearOpMode {
+public class Red_2_Auto extends LinearOpMode {
 
-    Drivetrain drivetrain = new Drivetrain();
+    DrivetrainForAuto drivetrain = new DrivetrainForAuto();
     Intake intake = new Intake();
 
     private static final boolean USE_WEBCAM = true;  // true for webcam, false for phone camera
@@ -79,26 +81,27 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
             if (firstPosition.equals("Right")) {
 
                 //go foward to put pixle next by object
+                //go foward to put pixle next by object
                 drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1750);
+                Thread.sleep(1550);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, .4);
-                Thread.sleep(1500);
+                Thread.sleep(1440);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(-.2, 0, 0);
-                Thread.sleep(900);
+                Thread.sleep(800);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(.2, 0, 0);
-                Thread.sleep(900);
+                Thread.sleep(800);
                 drivetrain.drive(0, 0, 0);
 
-//                //put pixle next by object
-//                intake.run(0.5, 0);
-//                Thread.sleep(1500);
-//                intake.run(0, 0);
+                //put pixle next by object
+                intake.run(0.4, 0);
+                Thread.sleep(800);
+                intake.run(0, 0);
 
 
 
@@ -110,72 +113,43 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
 
 
 
-                drivetrain.drive( 0,.4,0);
-                Thread.sleep(1700);
-                drivetrain.drive(0,0,0);
-
-
-
-                drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1950);
-                drivetrain.drive(0, 0, 0);
-
-
-                intake.run(0.5, 0);
-                Thread.sleep(2000);
-                intake.run(0, 0);
 
                 terminateOpModeNow();
 
-//            // 90degree rotation heading to bord area
-//            drivetrain.drive( 0,0,.4);
-//            Thread.sleep(1350);
-//            drivetrain.drive(0,0,0);
+            // 90degree rotation heading to bord area
+            drivetrain.drive( 0,0,.4);
+            Thread.sleep(1350);
+            drivetrain.drive(0,0,0);
             }
 
 
-           else if (firstPosition.equals("Center")) {
+            else if (firstPosition.equals("Center")) {
                 drivetrain.drive( -.4,0,0);
-                Thread.sleep(1800);
+                Thread.sleep(1600);
                 drivetrain.drive(0,0,0);
 
-//                //put pixle next by object
-//                intake.run(0.5,0);
-//                Thread.sleep(1200);
-//                intake.run(0,0);
-
+                //put pixle next by object
+                intake.run(0.4, 0);
+                Thread.sleep(800);
+                intake.run(0, 0);
 
 
 
 
                 //little bit back
                 drivetrain.drive( .4,0,0);
-                Thread.sleep(1800);
+                Thread.sleep(1580);
                 drivetrain.drive(0,0,0);
 
-
-
-                // 90degree rotation heading to bord area
-                drivetrain.drive( 0,0,.4);
-                Thread.sleep(1470);
-                drivetrain.drive(0,0,0);
-
-                drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1850);
-                drivetrain.drive(0, 0, 0);
-
-                intake.run(0.5, 0);
-                Thread.sleep(2000);
-                intake.run(0, 0);
 
                 terminateOpModeNow();
 
 
             }
-           else if (firstPosition.equals("Left")) {
+            else if (firstPosition.equals("Left")) {
                 //go foward to put pixle next by object
                 drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(1800);
+                Thread.sleep(1570);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, -.4);
@@ -187,12 +161,12 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(.2, 0, 0);
-                Thread.sleep(900);
+                Thread.sleep(1000);
                 drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
-                intake.run(0.5, 0);
-                Thread.sleep(1500);
+                intake.run(0.6, 0);
+                Thread.sleep(800);
                 intake.run(0, 0);
 
 
@@ -200,23 +174,13 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
                 Thread.sleep(100);
                 drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(0, 0, .4);
-                Thread.sleep(2800);
-                drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(0, 0.4, 0);
-                Thread.sleep(1850);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive(-.4, 0, 0);
-                Thread.sleep(2000);
-                drivetrain.drive(0, 0, 0);
 
                 terminateOpModeNow();
-//                //put pixle next by object
-//                intake.run(0.7, 0);
-//                Thread.sleep(2000);
-//                intake.run(0, 0);
+                //put pixle next by object
+                intake.run(0.7, 0);
+                Thread.sleep(2000);
+                intake.run(0, 0);
 
             }
             visionPortal.close();
@@ -229,10 +193,10 @@ public class NewAuto_with_Tensflow extends LinearOpMode {
         tfod = new TfodProcessor.Builder()
                 .setModelAssetName(TFOD_MODEL_ASSET)// set parameters for custom models.
                 .setModelLabels(LABELS)
-                //.setIsModelTensorFlow2(true)
-                //.setIsModelQuantized(true)
-                //.setModelInputSize(300)
-                //.setModelAspectRatio(16.0 / 9.0)
+                .setIsModelTensorFlow2(true)
+                .setIsModelQuantized(true)
+                .setModelInputSize(300)
+                .setModelAspectRatio(16.0 / 9.0)
 
                 .build();
 

@@ -13,11 +13,13 @@ public class ClimbingMec {
 
     public void init(HardwareMap hardwareMap) {
         motorElevatorOne = hardwareMap.dcMotor.get("motorElevatorRight");
+        motorElevatorOne.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorElevatorTwo = hardwareMap.dcMotor.get("motorElevatorLeft");
+        motorElevatorTwo.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
-    public void runElevator(double powerOne){
+    public void runElevator(double powerOne,double powerTwo){
         motorElevatorOne.setPower(powerOne);
-        motorElevatorTwo.setPower(-powerOne);
+        motorElevatorTwo.setPower(powerTwo);
 
         if(powerOne == 0){
             motorElevatorOne.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

@@ -12,10 +12,16 @@ public class Intake {
         intake = hardwareMap.dcMotor.get("Intake");
     }
 
-    public void run(double Intake, double outake) {
+    public void run(double outake, double Intake) {
 
-        intake.setPower(Intake - outake );
+        intake.setPower((outake *0.3)- (Intake));
 
+
+    }
+
+    public void runForAuto(double Intake, double outake) {
+
+        intake.setPower((Intake) - (outake));
 
     }
 
