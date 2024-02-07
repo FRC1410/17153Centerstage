@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Auto;
+package org.firstinspires.ftc.teamcode.Auto.fortest_junk;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -34,7 +34,7 @@ public class AutoDrivetrain extends LinearOpMode {
         while(opModeIsActive()){
             //Strafe positive is Right
 
-            drivetrainForAuto.drive( 0 ,Right_Speed ,0);
+            drivetrainForAuto.drive( Forward_Speed ,Right_Speed ,0);
             Thread.sleep(800);
             drivetrainForAuto.drive(0,0,0);
 
