@@ -36,6 +36,23 @@ public class Backet {
         }
     }
 
+    public void runElevatorAuto(double powerOne,double powerTwo,float Rtriger,float Ltriger){
+        double powerThree = (Rtriger)-(Ltriger);
+        motorElevatorOne.setPower(-powerOne);//buket
+        motorElevatorTwo.setPower(powerTwo);//arm
+        motorElevator.setPower(powerThree);// elevator
+
+        if(powerOne == 0){
+            motorElevatorOne.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        }
+        if(powerTwo == 0){
+            motorElevatorTwo.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        }
+        if(powerThree == 0){
+            motorElevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        }
+    }
+
 
 
 }

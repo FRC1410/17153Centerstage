@@ -3,10 +3,8 @@ package org.firstinspires.ftc.teamcode.Auto;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.Auto.oder.Constants;
 import org.firstinspires.ftc.teamcode.SubSystems.Backet;
-import org.firstinspires.ftc.teamcode.SubSystems.ServoDrone;
-import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
+import org.firstinspires.ftc.teamcode.SubSystems.ServoBucket;
 import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 import static org.firstinspires.ftc.teamcode.Auto.oder.Constants.*;
@@ -22,7 +20,7 @@ public class Auto_bsck_bord_test extends LinearOpMode {
 
     Backet backet = new Backet();
 
-    ServoDrone servoDrone = new ServoDrone();
+    ServoBucket servoBucket = new ServoBucket();
     @Override
     public void runOpMode() throws InterruptedException {
 
@@ -33,7 +31,7 @@ public class Auto_bsck_bord_test extends LinearOpMode {
         drivetrainForAuto.init(hardwareMap);
         intake.init(hardwareMap);
         backet.init(hardwareMap);
-        servoDrone.init(hardwareMap);
+        servoBucket.init(hardwareMap);
 
         waitForStart();
 
@@ -56,9 +54,9 @@ public class Auto_bsck_bord_test extends LinearOpMode {
             Thread.sleep(500);
             backet.runElevator(0,0,0,0);
 
-            servoDrone.runServo(true,false,false);
+            servoBucket.runServo(true,false);
             Thread.sleep(1200);
-            servoDrone.runServo(false,false,false);
+            servoBucket.runServo(false,false);
             backet.runElevator(0,0,0,1);
             Thread.sleep(200);
             backet.runElevator(0,0,0,0);

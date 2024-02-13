@@ -5,12 +5,7 @@ package org.firstinspires.ftc.teamcode.SubSystems;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import org.firstinspires.ftc.teamcode.SubSystems.Backet;
-import org.firstinspires.ftc.teamcode.SubSystems.ServoDrone;
-import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
-import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
-import org.firstinspires.ftc.teamcode.SubSystems.Intake;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
 public class tesat_backet {
 
     DcMotorEx motorElevatorOne;
@@ -20,7 +15,7 @@ public class tesat_backet {
 
     Backet backet = new Backet();
 
-    ServoDrone servoDrone = new ServoDrone();
+    ServoBucket servoBucket = new ServoBucket();
     public void init(HardwareMap hardwareMap) {
         motorElevatorOne = hardwareMap.get(DcMotorEx.class, "motorElevatorRight");
         motorElevatorOne.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

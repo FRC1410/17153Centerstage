@@ -17,7 +17,7 @@ public interface Constants {
 
 
     double IntakeSpeed = 0.4*NUM_FOR_CHUNING;
-    double OuttakeSpeed =0.4*NUM_FOR_CHUNING
+    double OuttakeSpeed =1.0* NUM_FOR_CHUNING
             ;
 
     double GoStraight_distance = 900;
