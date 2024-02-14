@@ -9,7 +9,6 @@ public class DrivetrainForAuto {
 
     DcMotorEx motorFrontLeft;
 
-
     DcMotorEx motorFrontRight;
     DcMotorEx motorBackRight;
     DcMotorEx motorBackLeft;

@@ -80,6 +80,10 @@ public class Auto_Red_top extends LinearOpMode {
 
             // Share the CPU.
             sleep(20);
+
+            //CONSTNT
+            Double distanceCONSTANT = 1.0;
+
             /////////////////  R I G H T   /////////////
             if (firstPosition.equals("Right")) {
 
@@ -92,47 +96,46 @@ public class Auto_Red_top extends LinearOpMode {
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(Forward_Speed_slow, 0, 0);
-                Thread.sleep(300);
-                drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(200);
-                drivetrain.drive(0, 0, 0);
+
 
                 //put pixle next by object
-                intake.run(OuttakeSpeed, 0);
-                Thread.sleep(1200);
+                intake.run(OuttakeSpeed* 0.7, 0);
+                Thread.sleep(1700);
                 intake.run(0, 0);
 
-                drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(200);
-                drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, Left_Speed, 0);
                 Thread.sleep(1200);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(1750);
+                Thread.sleep(1680);
                 drivetrain.drive(0, 0, 0);
 
 
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
-                Thread.sleep(2810);
+                Thread.sleep(2870);
                 drivetrain.drive(0,0,0);
 
                 drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(1600);
+                Thread.sleep(2015);
                 drivetrain.drive(0, 0, 0);
 
-
-
-                drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(200);
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(250);
                 drivetrain.drive(0, 0, 0);
 
                 run_backdrop();
+
+                drivetrain.drive(0, Left_Speed, 0);
+                Thread.sleep(2000);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
                 terminateOpModeNow();
             }
 
@@ -160,23 +163,28 @@ public class Auto_Red_top extends LinearOpMode {
 
                 // 90degree rotation heading to bord area
                 drivetrain.drive( 0,0,Rotation_Left_Speed);
-                Thread.sleep(1400);
+                Thread.sleep(1410);
                 drivetrain.drive(0,0,0);
 
                 drivetrain.drive(Back_Speed, 0, 0);
                 Thread.sleep(1800);
                 drivetrain.drive(0, 0, 0);
 
-                run_backdrop();//BUCK DOROP
 
-                drivetrain.drive( 0,Left_Speed,0);
-                Thread.sleep(1800);
+                drivetrain.drive( 0,Right_Speed,0);
+                Thread.sleep(200);
                 drivetrain.drive(0,0,0);
 
-                drivetrain.drive( Back_Speed,0,0);
-                Thread.sleep(800);
-                drivetrain.drive(0,0,0);
                 run_backdrop();
+
+                drivetrain.drive(0, Left_Speed, 0);
+                Thread.sleep(2400);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
 
                 terminateOpModeNow();
 
@@ -192,7 +200,7 @@ public class Auto_Red_top extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
-                Thread.sleep(1425);
+                Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed_slow, 0, 0);
@@ -209,12 +217,33 @@ public class Auto_Red_top extends LinearOpMode {
                 intake.run(0, 0);
 
 
+
                 drivetrain.drive(Back_Speed, 0, 0);
                 Thread.sleep(2000);
                 drivetrain.drive(0, 0, 0);
 
+                drivetrain.drive( 0,Right_Speed,0);
+                Thread.sleep(400);
+                drivetrain.drive(0,0,0);
+
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(250);
+                drivetrain.drive(0, 0, 0);
+
 
                 run_backdrop();
+
+                drivetrain.drive(0, Left_Speed, 0);
+                Thread.sleep(2400);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
+
+
+                terminateOpModeNow();
 
             }
             visionPortal.close();
@@ -236,11 +265,11 @@ public class Auto_Red_top extends LinearOpMode {
 
 
         backet.runElevator(0,0,1,0);
-        Thread.sleep(700);
+        Thread.sleep(380);
         backet.runElevator(0,0,0,0);
 
         drivetrain.drive(Back_Speed_slow, 0, 0);
-        Thread.sleep(250);
+        Thread.sleep(400);
         drivetrain.drive(0, 0, 0);
 
         servoBucket.runServo(true,false);
@@ -252,7 +281,7 @@ public class Auto_Red_top extends LinearOpMode {
         drivetrain.drive(0, 0, 0);
 
         backet.runElevator(0,0,0,1);
-        Thread.sleep(500);
+        Thread.sleep(300);
         backet.runElevator(0,0,0,0);
 
         backet.runElevator(1,0,0,0);
@@ -265,9 +294,6 @@ public class Auto_Red_top extends LinearOpMode {
         backet.runElevator(0,0,0,0);
 
 
-
-
-        terminateOpModeNow();
     }
     ///////////////// BACK DOROP//////////
     private void initTfod() {
