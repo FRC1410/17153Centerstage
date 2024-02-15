@@ -97,8 +97,6 @@ public class Auto_Red_top extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
 
-
-
                 //put pixle next by object
                 intake.run(OuttakeSpeed* 0.7, 0);
                 Thread.sleep(1700);
@@ -167,7 +165,7 @@ public class Auto_Red_top extends LinearOpMode {
                 drivetrain.drive(0,0,0);
 
                 drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(1800);
+                Thread.sleep(1600);
                 drivetrain.drive(0, 0, 0);
 
 
@@ -199,12 +197,16 @@ public class Auto_Red_top extends LinearOpMode {
                 Thread.sleep(1800);
                 drivetrain.drive(0, 0, 0);
 
+
+                Thread.sleep(300);
+                drivetrain.drive(0, 0, 0);
+
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed_slow, 0, 0);
-                Thread.sleep(300);
+                Thread.sleep(400);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Back_Speed_slow, 0, 0);
@@ -219,11 +221,11 @@ public class Auto_Red_top extends LinearOpMode {
 
 
                 drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(2000);
+                Thread.sleep(1900);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(400);
+                Thread.sleep(550);
                 drivetrain.drive(0,0,0);
 
                 drivetrain.drive(Forward_Speed, 0, 0);
@@ -281,7 +283,7 @@ public class Auto_Red_top extends LinearOpMode {
         drivetrain.drive(0, 0, 0);
 
         backet.runElevator(0,0,0,1);
-        Thread.sleep(300);
+        Thread.sleep(250);
         backet.runElevator(0,0,0,0);
 
         backet.runElevator(1,0,0,0);

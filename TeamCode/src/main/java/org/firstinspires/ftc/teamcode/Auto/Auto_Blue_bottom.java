@@ -7,8 +7,10 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.BuiltinCameraDir
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 import org.firstinspires.ftc.teamcode.Auto.oder.Constants;
+import org.firstinspires.ftc.teamcode.SubSystems.Backet;
 import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
+import org.firstinspires.ftc.teamcode.SubSystems.ServoBucket;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.tfod.TfodProcessor;
 import static org.firstinspires.ftc.teamcode.Auto.oder.Constants.*;
@@ -21,8 +23,13 @@ import java.util.List;
 
 public class Auto_Blue_bottom extends LinearOpMode {
 
+
     DrivetrainForAuto drivetrain = new DrivetrainForAuto();
     Intake intake = new Intake();
+    Backet backet = new Backet();
+
+    ServoBucket servoBucket = new ServoBucket();
+
     private static final boolean USE_WEBCAM = true;  // true for webcam, false for phone camera
 
     private static final String TFOD_MODEL_ASSET = "blue.tflite";
@@ -55,7 +62,8 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
         drivetrain.init(hardwareMap);
         intake.init(hardwareMap);
-
+        backet.init(hardwareMap);
+        servoBucket.init(hardwareMap);
         waitForStart();
 
         while (opModeIsActive()) {
@@ -67,111 +75,136 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
             // Save CPU resources; can resume streaming when needed.
+            if (gamepad1.dpad_down) {
+                visionPortal.stopStreaming();
+            } else if (gamepad1.dpad_up) {
+                visionPortal.resumeStreaming();
+            }
 
             // Share the CPU.
             sleep(20);
 
+            //CONSTNT
+            Double distanceCONSTANT = 1.0;
+
+            /////////////////  R I G H T   /////////////
             if (firstPosition.equals("Right")) {
 
                 //go foward to put pixle next by object
-                //go foward to put pixle next by object
                 drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(1550);
+                Thread.sleep(1900);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, Rotation_Right_Speed);
-                Thread.sleep(1450);
+                Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(Forward_Speed_slow, 0, 0);
-                Thread.sleep(900);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(900);
-                drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
-                intake.run(OuttakeSpeed, 0);
-                Thread.sleep(800);
+                intake.run(OuttakeSpeed* 0.7, 0);
+                Thread.sleep(1700);
                 intake.run(0, 0);
 
-
-
-
-
-
-
+// left
                 drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(100);
+                Thread.sleep(1900);
                 drivetrain.drive(0, 0, 0);
 
 
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(400);
+                drivetrain.drive(0, 0, 0);
 
-                terminateOpModeNow();
-            // 90degree rotation heading to bord area
-            drivetrain.drive( 0,0,Rotation_Right_Speed);
-            Thread.sleep(1350);
-            drivetrain.drive(0,0,0);
+                drivetrain.drive(0, Left_Speed, 0);
+                Thread.sleep(200);
+                drivetrain.drive(0, 0, 0);
+
+                run_backdrop();
+
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(2000);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
             }
 
 
+            /////////////////  C E N T R E R   /////////////
             else if (firstPosition.equals("Center")) {
                 drivetrain.drive( Forward_Speed,0,0);
                 Thread.sleep(1800);
                 drivetrain.drive(0,0,0);
 
                 //put pixle next by object
-                intake.run(OuttakeSpeed,0);
-                Thread.sleep(800);
-                intake.run(0,0);
-
-
+                intake.run(OuttakeSpeed, 0);
+                Thread.sleep(1700);
+                intake.run(0, 0);
 
 
 
 
                 //little bit back
                 drivetrain.drive( Back_Speed,0,0);
-                Thread.sleep(1800);
+                Thread.sleep(300);
                 drivetrain.drive(0,0,0);
 
 
 
                 // 90degree rotation heading to bord area
-                drivetrain.drive( 0,0,Rotation_Left_Speed);
-                Thread.sleep(1470);
+                drivetrain.drive( 0,0,Rotation_Right_Speed);
+                Thread.sleep(1410);
                 drivetrain.drive(0,0,0);
 
-                drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(1950);
+                drivetrain.drive(Back_Speed, 0, 0);
+                Thread.sleep(1600);
                 drivetrain.drive(0, 0, 0);
 
-                intake.run(OuttakeSpeed, 0);
-                Thread.sleep(2000);
-                intake.run(0, 0);
+
+                drivetrain.drive( 0,Left_Speed,0);
+                Thread.sleep(400);
+                drivetrain.drive(0,0,0);
+
+                run_backdrop();
+
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(2400);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
 
                 terminateOpModeNow();
 
 
-
             }
+
+
+            /////////////////  L E F T   /////////////
             else if (firstPosition.equals("Left")) {
                 //go foward to put pixle next by object
                 drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(1550);
+                Thread.sleep(1800);
+                drivetrain.drive(0, 0, 0);
+
+
+                Thread.sleep(300);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
-                Thread.sleep(1450);
+                Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed_slow, 0, 0);
-                Thread.sleep(900);
+                Thread.sleep(400);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(900);
+                Thread.sleep(200);
                 drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
@@ -181,18 +214,92 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
 
-                drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(200);
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(1200);
+                drivetrain.drive(0, 0, 0);
+
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(1680);
                 drivetrain.drive(0, 0, 0);
 
 
+                drivetrain.drive(0, 0, Rotation_Right_Speed);
+                Thread.sleep(2870);
+                drivetrain.drive(0,0,0);
+
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(2015);
+                drivetrain.drive(0, 0, 0);
+
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(250);
+                drivetrain.drive(0, 0, 0);
+
+                run_backdrop();
+
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(2000);
+                drivetrain.drive(0, 0, 0);
+
+
+                drivetrain.drive(Back_Speed*2, 0, 0);
+                Thread.sleep(1000);
+                drivetrain.drive(0, 0, 0);
+
 
                 terminateOpModeNow();
+
             }
             visionPortal.close();
+
+
         }
     }
+    ///////////////// BACK DOROP//////////
+    public void  run_backdrop() throws InterruptedException {
 
+
+        backet.runElevatorAuto(0,-1.0,0,0);
+        Thread.sleep(2500);
+        backet.runElevatorAuto(0,0,0,0);
+
+        backet.runElevatorAuto(-1,0,0,0);
+        Thread.sleep(2000);
+        backet.runElevator(0,0,0,0);
+
+
+        backet.runElevator(0,0,1,0);
+        Thread.sleep(380);
+        backet.runElevator(0,0,0,0);
+
+        drivetrain.drive(Back_Speed_slow, 0, 0);
+        Thread.sleep(400);
+        drivetrain.drive(0, 0, 0);
+
+        servoBucket.runServo(true,false);
+        Thread.sleep(1200);
+        servoBucket.runServo(false,false);
+
+        drivetrain.drive(Forward_Speed, 0, 0);
+        Thread.sleep(200);
+        drivetrain.drive(0, 0, 0);
+
+        backet.runElevator(0,0,0,1);
+        Thread.sleep(250);
+        backet.runElevator(0,0,0,0);
+
+        backet.runElevator(1,0,0,0);
+        Thread.sleep(2000);
+        backet.runElevator(0,0,0,0);
+
+
+        backet.runElevator(0,0.4,0,0);
+        Thread.sleep(1500);
+        backet.runElevator(0,0,0,0);
+
+
+    }
+    ///////////////// BACK DOROP//////////
     private void initTfod() {
 
         // Create the TensorFlow processor by using a builder.
@@ -241,14 +348,14 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
             telemetry.addData("- Size", "%.0f x %.0f", recognition.getWidth(), recognition.getHeight());
 
-            if (firstchack ){
-                if (x <= 150 ) {
+            if (firstchack){
+                if (x <= 200 ) {
                     position = "Left";
                 }
-                else if (x >= 150 && x <= 400 ) {
+                else if (x >= 200 && x <= 500 ) {
                     position = "Center";
                 }
-                else if (x >= 400 ) {
+                else if (x >= 500 ) {
                     position = "Right";
                 }
 
