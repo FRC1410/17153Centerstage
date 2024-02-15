@@ -101,36 +101,39 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
                 //put pixle next by object
-                intake.run(OuttakeSpeed* 0.7, 0);
+                intake.run(OuttakeSpeed * 0.7, 0);
                 Thread.sleep(1700);
                 intake.run(0, 0);
 
 // left
-                drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(1900);
+                drivetrain.drive(0, Right_Speed, 0);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
 
-
-                drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(400);
+                drivetrain.drive(Back_Speed, 0, 0);
+                Thread.sleep(5000);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(200);
+                Thread.sleep(2050);
                 drivetrain.drive(0, 0, 0);
+
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(250);
+                drivetrain.drive(0, 0, 0);
+
 
                 run_backdrop();
 
                 drivetrain.drive(0, Right_Speed, 0);
-                Thread.sleep(2000);
+                Thread.sleep(2400);
                 drivetrain.drive(0, 0, 0);
 
 
-                drivetrain.drive(Back_Speed*2, 0, 0);
+                drivetrain.drive(Back_Speed * 2, 0, 0);
                 Thread.sleep(1000);
                 drivetrain.drive(0, 0, 0);
             }
-
 
             /////////////////  C E N T R E R   /////////////
             else if (firstPosition.equals("Center")) {
@@ -158,13 +161,22 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 Thread.sleep(1410);
                 drivetrain.drive(0,0,0);
 
+
+                drivetrain.drive( 0,Right_Speed,0);
+                Thread.sleep(1500);
+                drivetrain.drive(0,0,0);
+
                 drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(1600);
+                Thread.sleep(5000);
                 drivetrain.drive(0, 0, 0);
+
+                drivetrain.drive( 0,Left_Speed,0);
+                Thread.sleep(1500);
+                drivetrain.drive(0,0,0);
 
 
                 drivetrain.drive( 0,Left_Speed,0);
-                Thread.sleep(400);
+                Thread.sleep(200);
                 drivetrain.drive(0,0,0);
 
                 run_backdrop();
@@ -177,7 +189,6 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 drivetrain.drive(Back_Speed*2, 0, 0);
                 Thread.sleep(1000);
                 drivetrain.drive(0, 0, 0);
-
                 terminateOpModeNow();
 
 
@@ -192,8 +203,6 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
 
-                Thread.sleep(300);
-                drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(1420);
@@ -214,22 +223,23 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
 
-                drivetrain.drive(0, Right_Speed, 0);
-                Thread.sleep(1200);
+                drivetrain.drive(0, Left_Speed, 0);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(1680);
+                Thread.sleep(3480);
                 drivetrain.drive(0, 0, 0);
 
-
-                drivetrain.drive(0, 0, Rotation_Right_Speed);
+                drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(2870);
                 drivetrain.drive(0,0,0);
 
+
                 drivetrain.drive(0, Right_Speed, 0);
-                Thread.sleep(2015);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
+
 
                 drivetrain.drive(Forward_Speed, 0, 0);
                 Thread.sleep(250);
@@ -237,7 +247,7 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
                 run_backdrop();
 
-                drivetrain.drive(0, Right_Speed, 0);
+                drivetrain.drive(0, Left_Speed, 0);
                 Thread.sleep(2000);
                 drivetrain.drive(0, 0, 0);
 
@@ -245,8 +255,6 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 drivetrain.drive(Back_Speed*2, 0, 0);
                 Thread.sleep(1000);
                 drivetrain.drive(0, 0, 0);
-
-
                 terminateOpModeNow();
 
             }

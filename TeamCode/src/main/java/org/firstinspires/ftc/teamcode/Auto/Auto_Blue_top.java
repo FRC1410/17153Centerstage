@@ -190,9 +190,6 @@ public class Auto_Blue_top extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
 
-                Thread.sleep(300);
-                drivetrain.drive(0, 0, 0);
-
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);

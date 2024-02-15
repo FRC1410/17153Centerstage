@@ -106,21 +106,22 @@ public class Auto_Red_bottom extends LinearOpMode {
 
 
                 drivetrain.drive(0, Right_Speed, 0);
-                Thread.sleep(1200);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive(Forward_Speed, 0, 0);
                 Thread.sleep(3480);
                 drivetrain.drive(0, 0, 0);
 
-
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(2870);
                 drivetrain.drive(0,0,0);
 
+
                 drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(2015);
+                Thread.sleep(1500);
                 drivetrain.drive(0, 0, 0);
+
 
                 drivetrain.drive(Forward_Speed, 0, 0);
                 Thread.sleep(250);
@@ -235,16 +236,14 @@ public class Auto_Red_bottom extends LinearOpMode {
                 drivetrain.drive(0, 0, 0);
 
                 drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(550);
+                Thread.sleep(2050);
                 drivetrain.drive(0,0,0);
 
                 drivetrain.drive(Forward_Speed, 0, 0);
                 Thread.sleep(250);
                 drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(1500);
-                drivetrain.drive(0,0,0);
+
                 run_backdrop();
 
                 drivetrain.drive(0, Left_Speed, 0);
