@@ -105,7 +105,7 @@ public class Auto_Red_bottom extends LinearOpMode {
                 intake.run(0, 0);
 
 
-                drivetrain.drive(0, Left_Speed, 0);
+                drivetrain.drive(0, Right_Speed, 0);
                 Thread.sleep(1200);
                 drivetrain.drive(0, 0, 0);
 
