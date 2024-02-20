@@ -6,20 +6,20 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class ServoDrone {
     public Servo servoDrone;
 
-    public void runServo(boolean r, boolean l) {
+    public void runServo(boolean reset, boolean release){
 
-        if (l){
-            servoDrone.setPosition(0);
+        if (reset){
+            servoDrone.setPosition(-.2);
         }
-        else if(l && r){
-            servoDrone.setPosition(0.4);
+        else if(release){
+            servoDrone.setPosition(1);
         }
 
     }
 
     public void init(HardwareMap hardwareMap) {
-
-        servoDrone = hardwareMap.get(Servo.class,"servo");
+        //Changed name to servoDrone instead of the same name in initialize
+        servoDrone = hardwareMap.get(Servo.class,"servoDrone");
     }
 
 

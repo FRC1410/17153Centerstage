@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class ServoBucket {
     public Servo servo;
 
-    public void runServo(boolean a, boolean b) {
+    public void runServoBucket(boolean a, boolean b) {
 
         if (a){
             servo.setPosition(1);

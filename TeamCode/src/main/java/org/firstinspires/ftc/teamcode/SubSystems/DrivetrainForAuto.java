@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.SubSystems;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
@@ -35,6 +36,7 @@ public class DrivetrainForAuto {
 
         motorBackLeft = hardwareMap.get(DcMotorEx.class, "motorBackLeft");
         motorBackLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorBackRight.setDirection(DcMotorSimple.Direction.REVERSE);
 
 
 

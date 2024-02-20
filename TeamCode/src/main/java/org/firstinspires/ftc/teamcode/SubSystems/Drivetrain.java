@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
@@ -29,33 +30,11 @@ public class Drivetrain {
         motorBackLeft = hardwareMap.dcMotor.get("motorBackLeft");
         motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
+        motorBackRight.setDirection(DcMotorSimple.Direction.REVERSE);
+
     }
 
-//    public void Autoinit(HardwareMap hardwareMap) {
-//        motorFrontLeft = hardwareMap.dcMotor.get("motorFrontLeft");
-//        motorFrontRight = hardwareMap.dcMotor.get("motorFrontRight");
-//        motorBackRight = hardwareMap.dcMotor.get("motorBackRight");
-//        motorBackLeft = hardwareMap.dcMotor.get("motorBackLeft");
-//        Intake = hardwareMap.dcMotor.get("Intake");
-//
-//
-//
-//        motorFrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-//        motorBackRight.setDirection(DcMotorSimple.Direction.REVERSE);
-//        motorBackLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-//
-//        motorFrontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-//        motorFrontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-//        motorBackRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-//        motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-//
-//        motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        motorFrontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        motorBackRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        motorBackLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//
-//
-//    }
+
 
 
     public void drive(double forwardBackwardMovement, double strafe, double rotation) {

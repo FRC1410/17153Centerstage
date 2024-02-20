@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Auto;
+package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,22 +6,23 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.BuiltinCameraDirection;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
+import org.firstinspires.ftc.teamcode.SubSystems.Backet;
 import org.firstinspires.ftc.teamcode.SubSystems.DrivetrainForAuto;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
-import org.firstinspires.ftc.teamcode.SubSystems.Backet;
 import org.firstinspires.ftc.teamcode.SubSystems.ServoBucket;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.tfod.TfodProcessor;
-import static org.firstinspires.ftc.teamcode.Auto.oder.Constants.*;
+
+import static org.firstinspires.ftc.teamcode.Autonomous.Constants.*;
 import java.util.List;
 
 
-
 //This Is DriveTrain Code but with Autonomous
+//Need to deploy my code which is why it might've not worked when I was testing auto
+@Autonomous(name="Robot: Auto Blue_Botom", group="Auto")
 
-@Autonomous(name="Robot:Auto Red_Botom", group="Auto")
+public class Auto_Blue_bottom extends LinearOpMode {
 
-public class Auto_Red_bottom extends LinearOpMode {
 
     DrivetrainForAuto drivetrain = new DrivetrainForAuto();
     Intake intake = new Intake();
@@ -31,11 +32,11 @@ public class Auto_Red_bottom extends LinearOpMode {
 
     private static final boolean USE_WEBCAM = true;  // true for webcam, false for phone camera
 
-    private static final String TFOD_MODEL_ASSET = "red.tflite";
+    private static final String TFOD_MODEL_ASSET = "blue.tflite";
 
     private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/CenterStage.tflite";
     private static final String[] LABELS = {
-            "RedObject",
+            "BlueObject",
     };
 
     private TfodProcessor tfod;
@@ -100,47 +101,47 @@ public class Auto_Red_bottom extends LinearOpMode {
 
 
                 //put pixle next by object
-                intake.run(OuttakeSpeed* 0.7, 0);
+                intake.run(OuttakeSpeed * 0.7, 0);
                 Thread.sleep(1700);
                 intake.run(0, 0);
 
 
-                drivetrain.drive(0, Right_Speed, 0);
-                Thread.sleep(1500);
-                drivetrain.drive(0, 0, 0);
+//                drivetrain.drive(0, Right_Speed, 0);
+//                Thread.sleep(1500);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(0,0,Rotation_Right_Speed);
+//                Thread.sleep(2840);
+//
+//                drivetrain.drive( Forward_Speed, 0, 0);
+//                Thread.sleep(4800);
+//                drivetrain.drive(0, 0, 0);
 
-                drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(3480);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive(0, 0, Rotation_Left_Speed);
-                Thread.sleep(2870);
-                drivetrain.drive(0,0,0);
-
-
-                drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(1500);
-                drivetrain.drive(0, 0, 0);
-
-
-                drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(250);
-                drivetrain.drive(0, 0, 0);
-
-                run_backdrop();
-
-                drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(2000);
-                drivetrain.drive(0, 0, 0);
-
-
-                drivetrain.drive(Back_Speed*2, 0, 0);
-                Thread.sleep(1000);
-                drivetrain.drive(0, 0, 0);
+//                drivetrain.drive(0, Left_Speed, 0);
+//                Thread.sleep(2050);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(Forward_Speed, 0, 0);
+//                Thread.sleep(250);
+//                drivetrain.drive(0, 0, 0);
+//
+//
+//                run_backdrop();
+//
+//                drivetrain.drive(0, Right_Speed, 0);
+//                Thread.sleep(2400);
+//                drivetrain.drive(0, 0, 0);
+//
+//
+//                drivetrain.drive(Back_Speed * 2, 0, 0);
+//                Thread.sleep(1000);
+//                drivetrain.drive(0, 0, 0);
+//                intake.run(OuttakeSpeed , 0);
+//                Thread.sleep(1700);
+//                intake.run(0, 0);
                 terminateOpModeNow();
             }
-
-
+            //might not be right
             /////////////////  C E N T R E R   /////////////
             else if (firstPosition.equals("Center")) {
                 drivetrain.drive( Forward_Speed,0,0);
@@ -149,59 +150,62 @@ public class Auto_Red_bottom extends LinearOpMode {
 
                 //put pixle next by object
                 intake.run(OuttakeSpeed, 0);
-                Thread.sleep(1700);
+                Thread.sleep(1750);
                 intake.run(0, 0);
 
 
 
 
                 //little bit back
-                drivetrain.drive( Back_Speed,0,0);
-                Thread.sleep(300);
-                drivetrain.drive(0,0,0);
+//                drivetrain.drive( Back_Speed,0,0);
+//                Thread.sleep(300);
+//                drivetrain.drive(0,0,0);
 
 
 
                 // 90degree rotation heading to bord area
-                drivetrain.drive( 0,0,Rotation_Left_Speed);
-                Thread.sleep(1410);
-                drivetrain.drive(0,0,0);
-
-
-                drivetrain.drive( 0,Left_Speed,0);
-                Thread.sleep(1500);
-                drivetrain.drive(0,0,0);
-
-                drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(5000);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(1500);
-                drivetrain.drive(0,0,0);
-
-
-                drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(200);
-                drivetrain.drive(0,0,0);
-
-                run_backdrop();
-
-                drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(2400);
-                drivetrain.drive(0, 0, 0);
-
-
-                drivetrain.drive(Back_Speed*2, 0, 0);
-                Thread.sleep(1000);
-                drivetrain.drive(0, 0, 0);
-
+//                drivetrain.drive( 0,0,Rotation_Left_Speed);
+//                Thread.sleep(1410);
+//                drivetrain.drive(0,0,0);
+//
+//                drivetrain.drive( 0,Left_Speed,0);
+//                Thread.sleep(1480);
+//                drivetrain.drive(0,0,0);
+//                Thread.sleep(100);
+//
+//                drivetrain.drive(Forward_Speed, 0, 0);
+//                Thread.sleep(4800);
+//                drivetrain.drive(0, 0, 0);
+//
+////                drivetrain.drive( 0,Left_Speed,0);
+////                Thread.sleep(1500);
+////                drivetrain.drive(0,0,0);
+////
+////                //this does not make sense
+////                drivetrain.drive( 0,Left_Speed,0);
+////                Thread.sleep(200);
+////                drivetrain.drive(0,0,0);
+////
+////                run_backdrop();
+////
+////                drivetrain.drive(0, Right_Speed, 0);
+////                Thread.sleep(2400);
+////                drivetrain.drive(0, 0, 0);
+////
+////
+////                drivetrain.drive(Back_Speed*2, 0, 0);
+////                Thread.sleep(1000);
+////                drivetrain.drive(0, 0, 0);
+////                terminateOpModeNow();
+//                intake.run(OuttakeSpeed, 0);
+//                Thread.sleep(1700);
+//                intake.run(0, 0);
                 terminateOpModeNow();
 
 
             }
 
-
+        //TWEAK THIS
             /////////////////  L E F T   /////////////
             else if (firstPosition.equals("Left")) {
                 //go foward to put pixle next by object
@@ -209,55 +213,135 @@ public class Auto_Red_bottom extends LinearOpMode {
                 Thread.sleep(1800);
                 drivetrain.drive(0, 0, 0);
 
+
+
                 drivetrain.drive(0, 0, Rotation_Left_Speed);
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-
-                drivetrain.drive(Forward_Speed_slow, 0, 0);
-                Thread.sleep(400);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive(Back_Speed_slow, 0, 0);
-                Thread.sleep(200);
-                drivetrain.drive(0, 0, 0);
+//                drivetrain.drive(Forward_Speed_slow, 0, 0);
+//                Thread.sleep(400);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(Back_Speed_slow, 0, 0);
+//                Thread.sleep(200);
+//                drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
                 intake.run(OuttakeSpeed, 0);
                 Thread.sleep(800);
                 intake.run(0, 0);
 
-                drivetrain.drive( 0,Left_Speed,0);
-                Thread.sleep(1500);
-                drivetrain.drive(0,0,0);
-
-                drivetrain.drive(Back_Speed, 0, 0);
-                Thread.sleep(5000);
-                drivetrain.drive(0, 0, 0);
-
-                drivetrain.drive( 0,Right_Speed,0);
-                Thread.sleep(2050);
-                drivetrain.drive(0,0,0);
-
-                drivetrain.drive(Forward_Speed, 0, 0);
-                Thread.sleep(250);
-                drivetrain.drive(0, 0, 0);
 
 
-                run_backdrop();
-
-                drivetrain.drive(0, Left_Speed, 0);
-                Thread.sleep(2400);
-                drivetrain.drive(0, 0, 0);
-
-
-                drivetrain.drive(Back_Speed*2, 0, 0);
-                Thread.sleep(1000);
-                drivetrain.drive(0, 0, 0);
+//                drivetrain.drive(0, Left_Speed, 0);
+//                Thread.sleep(1500);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(Forward_Speed, 0, 0);
+//                Thread.sleep(4480);
+//                drivetrain.drive(0, 0, 0);
 
 
+                //This does not make sense
+//                drivetrain.drive(0, 0, Rotation_Left_Speed);
+//                Thread.sleep(2870);
+//                drivetrain.drive(0,0,0);
+//
+//
+//                drivetrain.drive(0,Left_Speed, 0);
+//                Thread.sleep(1500);
+//                drivetrain.drive(0, 0, 0);
+//
+//
+//                drivetrain.drive(Forward_Speed, 0, 0);
+//                Thread.sleep(250);
+//                drivetrain.drive(0, 0, 0);
+//
+//                run_backdrop();
+//
+//                drivetrain.drive(0, Left_Speed, 0);
+//                Thread.sleep(2000);
+//                drivetrain.drive(0, 0, 0);
+//
+//
+//                drivetrain.drive(Back_Speed*2, 0, 0);
+//                Thread.sleep(1000);
+//                drivetrain.drive(0, 0, 0);
+
+//                intake.run(OuttakeSpeed, 0);
+//                Thread.sleep(800);
+//                intake.run(0, 0);
                 terminateOpModeNow();
 
+            }
+            //Maybe this works
+//            else if(!firstPosition.equals("Center") && !firstPosition.equals("Left")){
+//                //go foward to put pixle next by object
+//                drivetrain.drive(Forward_Speed, 0, 0);
+//                Thread.sleep(1900);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(0, 0, Rotation_Right_Speed);
+//                Thread.sleep(1420);
+//                drivetrain.drive(0, 0, 0);
+//
+//
+//                //put pixle next by object
+//                intake.run(OuttakeSpeed * 0.7, 0);
+//                Thread.sleep(1700);
+//                intake.run(0, 0);
+//
+//
+//                drivetrain.drive(0, Right_Speed, 0);
+//                Thread.sleep(1500);
+//                drivetrain.drive(0, 0, 0);
+//
+//                drivetrain.drive(0,0,Rotation_Right_Speed);
+//                Thread.sleep(2840);
+//
+//                drivetrain.drive( Forward_Speed, 0, 0);
+//                Thread.sleep(4800);
+//                drivetrain.drive(0, 0, 0);
+//
+////                drivetrain.drive(0, Left_Speed, 0);
+////                Thread.sleep(2050);
+////                drivetrain.drive(0, 0, 0);
+////
+////                drivetrain.drive(Forward_Speed, 0, 0);
+////                Thread.sleep(250);
+////                drivetrain.drive(0, 0, 0);
+////
+////
+////                run_backdrop();
+////
+////                drivetrain.drive(0, Right_Speed, 0);
+////                Thread.sleep(2400);
+////                drivetrain.drive(0, 0, 0);
+////
+////
+////                drivetrain.drive(Back_Speed * 2, 0, 0);
+////                Thread.sleep(1000);
+////                drivetrain.drive(0, 0, 0);
+//                intake.run(OuttakeSpeed , 0);
+//                Thread.sleep(1700);
+//                intake.run(0, 0);
+//                terminateOpModeNow();
+//            }
+            else if(!firstPosition.equals("Center") && !firstPosition.equals("Left")){
+                drivetrain.drive(Forward_Speed, 0, 0);
+                Thread.sleep(1900);
+                drivetrain.drive(0, 0, 0);
+
+                drivetrain.drive(0, 0, Rotation_Right_Speed);
+                Thread.sleep(1420);
+                drivetrain.drive(0, 0, 0);
+
+
+                //put pixle next by object
+                intake.run(OuttakeSpeed* 0.7, 0);
+                Thread.sleep(1700);
+                intake.run(0, 0);
             }
             visionPortal.close();
 
@@ -285,9 +369,9 @@ public class Auto_Red_bottom extends LinearOpMode {
         Thread.sleep(400);
         drivetrain.drive(0, 0, 0);
 
-        servoBucket.runServo(true,false);
+        servoBucket.runServoBucket(true,false);
         Thread.sleep(1200);
-        servoBucket.runServo(false,false);
+        servoBucket.runServoBucket(false,false);
 
         drivetrain.drive(Forward_Speed, 0, 0);
         Thread.sleep(200);

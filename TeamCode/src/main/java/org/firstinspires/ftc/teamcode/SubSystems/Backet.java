@@ -22,7 +22,7 @@ public class Backet {
     public void runElevator(double powerOne,double powerTwo,float Rtriger,float Ltriger){
         double powerThree = (Rtriger*0.6)-(Ltriger*0.6);
         motorElevatorOne.setPower(-powerOne*0.6);//buket
-        motorElevatorTwo.setPower(powerTwo*0.4);//arm
+        motorElevatorTwo.setPower(powerTwo*0.6);//arm
         motorElevator.setPower(powerThree);// elevator
 
         if(powerOne == 0){
