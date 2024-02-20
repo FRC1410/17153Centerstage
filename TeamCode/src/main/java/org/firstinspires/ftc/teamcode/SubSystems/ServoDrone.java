@@ -6,12 +6,12 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class ServoDrone {
     public Servo servoDrone;
 
-    public void runServo(boolean reset, boolean release){
+    public void runServo(boolean reset_position, boolean release_position){
 
-        if (reset){
+        if (reset_position){
             servoDrone.setPosition(-.2);
         }
-        else if(release){
+        else if(release_position){
             servoDrone.setPosition(1);
         }
 

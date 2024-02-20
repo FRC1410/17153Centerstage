@@ -106,43 +106,11 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 intake.run(0, 0);
 
 
-//                drivetrain.drive(0, Right_Speed, 0);
-//                Thread.sleep(1500);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(0,0,Rotation_Right_Speed);
-//                Thread.sleep(2840);
-//
-//                drivetrain.drive( Forward_Speed, 0, 0);
-//                Thread.sleep(4800);
-//                drivetrain.drive(0, 0, 0);
 
-//                drivetrain.drive(0, Left_Speed, 0);
-//                Thread.sleep(2050);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(Forward_Speed, 0, 0);
-//                Thread.sleep(250);
-//                drivetrain.drive(0, 0, 0);
-//
-//
-//                run_backdrop();
-//
-//                drivetrain.drive(0, Right_Speed, 0);
-//                Thread.sleep(2400);
-//                drivetrain.drive(0, 0, 0);
-//
-//
-//                drivetrain.drive(Back_Speed * 2, 0, 0);
-//                Thread.sleep(1000);
-//                drivetrain.drive(0, 0, 0);
-//                intake.run(OuttakeSpeed , 0);
-//                Thread.sleep(1700);
-//                intake.run(0, 0);
                 terminateOpModeNow();
             }
             //might not be right
-            /////////////////  C E N T R E R   /////////////
+            /////////////////  C E N T E R   /////////////
             else if (firstPosition.equals("Center")) {
                 drivetrain.drive( Forward_Speed,0,0);
                 Thread.sleep(1800);
@@ -156,50 +124,7 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
 
-                //little bit back
-//                drivetrain.drive( Back_Speed,0,0);
-//                Thread.sleep(300);
-//                drivetrain.drive(0,0,0);
 
-
-
-                // 90degree rotation heading to bord area
-//                drivetrain.drive( 0,0,Rotation_Left_Speed);
-//                Thread.sleep(1410);
-//                drivetrain.drive(0,0,0);
-//
-//                drivetrain.drive( 0,Left_Speed,0);
-//                Thread.sleep(1480);
-//                drivetrain.drive(0,0,0);
-//                Thread.sleep(100);
-//
-//                drivetrain.drive(Forward_Speed, 0, 0);
-//                Thread.sleep(4800);
-//                drivetrain.drive(0, 0, 0);
-//
-////                drivetrain.drive( 0,Left_Speed,0);
-////                Thread.sleep(1500);
-////                drivetrain.drive(0,0,0);
-////
-////                //this does not make sense
-////                drivetrain.drive( 0,Left_Speed,0);
-////                Thread.sleep(200);
-////                drivetrain.drive(0,0,0);
-////
-////                run_backdrop();
-////
-////                drivetrain.drive(0, Right_Speed, 0);
-////                Thread.sleep(2400);
-////                drivetrain.drive(0, 0, 0);
-////
-////
-////                drivetrain.drive(Back_Speed*2, 0, 0);
-////                Thread.sleep(1000);
-////                drivetrain.drive(0, 0, 0);
-////                terminateOpModeNow();
-//                intake.run(OuttakeSpeed, 0);
-//                Thread.sleep(1700);
-//                intake.run(0, 0);
                 terminateOpModeNow();
 
 
@@ -219,13 +144,6 @@ public class Auto_Blue_bottom extends LinearOpMode {
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-//                drivetrain.drive(Forward_Speed_slow, 0, 0);
-//                Thread.sleep(400);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(Back_Speed_slow, 0, 0);
-//                Thread.sleep(200);
-//                drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
                 intake.run(OuttakeSpeed, 0);
@@ -234,100 +152,11 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
 
-//                drivetrain.drive(0, Left_Speed, 0);
-//                Thread.sleep(1500);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(Forward_Speed, 0, 0);
-//                Thread.sleep(4480);
-//                drivetrain.drive(0, 0, 0);
 
-
-                //This does not make sense
-//                drivetrain.drive(0, 0, Rotation_Left_Speed);
-//                Thread.sleep(2870);
-//                drivetrain.drive(0,0,0);
-//
-//
-//                drivetrain.drive(0,Left_Speed, 0);
-//                Thread.sleep(1500);
-//                drivetrain.drive(0, 0, 0);
-//
-//
-//                drivetrain.drive(Forward_Speed, 0, 0);
-//                Thread.sleep(250);
-//                drivetrain.drive(0, 0, 0);
-//
-//                run_backdrop();
-//
-//                drivetrain.drive(0, Left_Speed, 0);
-//                Thread.sleep(2000);
-//                drivetrain.drive(0, 0, 0);
-//
-//
-//                drivetrain.drive(Back_Speed*2, 0, 0);
-//                Thread.sleep(1000);
-//                drivetrain.drive(0, 0, 0);
-
-//                intake.run(OuttakeSpeed, 0);
-//                Thread.sleep(800);
-//                intake.run(0, 0);
                 terminateOpModeNow();
 
             }
-            //Maybe this works
-//            else if(!firstPosition.equals("Center") && !firstPosition.equals("Left")){
-//                //go foward to put pixle next by object
-//                drivetrain.drive(Forward_Speed, 0, 0);
-//                Thread.sleep(1900);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(0, 0, Rotation_Right_Speed);
-//                Thread.sleep(1420);
-//                drivetrain.drive(0, 0, 0);
-//
-//
-//                //put pixle next by object
-//                intake.run(OuttakeSpeed * 0.7, 0);
-//                Thread.sleep(1700);
-//                intake.run(0, 0);
-//
-//
-//                drivetrain.drive(0, Right_Speed, 0);
-//                Thread.sleep(1500);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(0,0,Rotation_Right_Speed);
-//                Thread.sleep(2840);
-//
-//                drivetrain.drive( Forward_Speed, 0, 0);
-//                Thread.sleep(4800);
-//                drivetrain.drive(0, 0, 0);
-//
-////                drivetrain.drive(0, Left_Speed, 0);
-////                Thread.sleep(2050);
-////                drivetrain.drive(0, 0, 0);
-////
-////                drivetrain.drive(Forward_Speed, 0, 0);
-////                Thread.sleep(250);
-////                drivetrain.drive(0, 0, 0);
-////
-////
-////                run_backdrop();
-////
-////                drivetrain.drive(0, Right_Speed, 0);
-////                Thread.sleep(2400);
-////                drivetrain.drive(0, 0, 0);
-////
-////
-////                drivetrain.drive(Back_Speed * 2, 0, 0);
-////                Thread.sleep(1000);
-////                drivetrain.drive(0, 0, 0);
-//                intake.run(OuttakeSpeed , 0);
-//                Thread.sleep(1700);
-//                intake.run(0, 0);
-//                terminateOpModeNow();
-//            }
+
             else if(!firstPosition.equals("Center") && !firstPosition.equals("Left")){
                 drivetrain.drive(Forward_Speed, 0, 0);
                 Thread.sleep(1900);
@@ -348,7 +177,7 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
         }
     }
-    ///////////////// BACK DOROP//////////
+    ///////////////// BACK DROP//////////
     public void  run_backdrop() throws InterruptedException {
 
 
@@ -392,7 +221,7 @@ public class Auto_Blue_bottom extends LinearOpMode {
 
 
     }
-    ///////////////// BACK DOROP//////////
+    ///////////////// BACK DROP//////////
     private void initTfod() {
 
         // Create the TensorFlow processor by using a builder.

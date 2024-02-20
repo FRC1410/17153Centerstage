@@ -19,11 +19,7 @@ public class Intake {
 
     }
 
-    public void runForAuto(double Intake, double outake) {
 
-        intake.setPower((Intake) - (outake));
-
-    }
 
 
 }

@@ -81,7 +81,7 @@ public class Auto_Red_top extends LinearOpMode {
             // Share the CPU.
             sleep(20);
 
-            //CONSTNT
+            //CONSTANT
             Double distanceCONSTANT = 1.0;
 
             /////////////////  R I G H T   /////////////
@@ -138,7 +138,7 @@ public class Auto_Red_top extends LinearOpMode {
             }
 
 
-            /////////////////  C E N T R E R   /////////////
+            /////////////////  C E N T E R   /////////////
             else if (firstPosition.equals("Center")) {
                 drivetrain.drive( Forward_Speed,0,0);
                 Thread.sleep(1750);
@@ -202,13 +202,7 @@ public class Auto_Red_top extends LinearOpMode {
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-//                drivetrain.drive(Forward_Speed_slow, 0, 0);
-//                Thread.sleep(400);
-//                drivetrain.drive(0, 0, 0);
-//1
-//                drivetrain.drive(Back_Speed_slow, 0, 0);
-//                Thread.sleep(200);
-//                drivetrain.drive(0, 0, 0);
+
 
                 //put pixle next by object
                 intake.run(OuttakeSpeed*0.7, 0);
@@ -301,7 +295,7 @@ public class Auto_Red_top extends LinearOpMode {
 
         }
     }
-    ///////////////// BACK DOROP//////////
+    ///////////////// BACK DROP//////////
     public void  run_backdrop() throws InterruptedException {
 
 
@@ -345,7 +339,7 @@ public class Auto_Red_top extends LinearOpMode {
 
 
     }
-    ///////////////// BACK DOROP//////////
+    ///////////////// BACK DROP//////////
     private void initTfod() {
 
         // Create the TensorFlow processor by using a builder.

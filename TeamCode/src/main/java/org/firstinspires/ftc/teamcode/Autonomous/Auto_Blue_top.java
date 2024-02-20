@@ -131,7 +131,7 @@ public class Auto_Blue_top extends LinearOpMode {
             }
 
 
-            /////////////////  C E N T R E R   /////////////
+            /////////////////  C E N T E R   /////////////
             else if (firstPosition.equals("Center")) {
                 drivetrain.drive( Forward_Speed,0,0);
                 Thread.sleep(1750);
@@ -195,13 +195,6 @@ public class Auto_Blue_top extends LinearOpMode {
                 Thread.sleep(1420);
                 drivetrain.drive(0, 0, 0);
 
-//                drivetrain.drive(Forward_Speed_slow, 0, 0);
-//                Thread.sleep(400);
-//                drivetrain.drive(0, 0, 0);
-//
-//                drivetrain.drive(Back_Speed_slow, 0, 0);
-//                Thread.sleep(200);
-//                drivetrain.drive(0, 0, 0);
 
                 //put pixle next by object
                 intake.run(OuttakeSpeed*0.8, 0);
@@ -261,7 +254,6 @@ public class Auto_Blue_top extends LinearOpMode {
                 Thread.sleep(1700);
                 intake.run(0, 0);
 
-// left
                 drivetrain.drive(Back_Speed, 0, 0);
                 Thread.sleep(1900);
                 drivetrain.drive(0, 0, 0);
@@ -288,46 +280,7 @@ public class Auto_Blue_top extends LinearOpMode {
                 terminateOpModeNow();
             }
 
-//             if(!firstPosition.equals("Center") && !firstPosition.equals("Left")){
-//                 //go foward to put pixle next by object
-//                 drivetrain.drive(Forward_Speed, 0, 0);
-//                 Thread.sleep(1900);
-//                 drivetrain.drive(0, 0, 0);
-//
-//                 drivetrain.drive(0, 0, Rotation_Right_Speed);
-//                 Thread.sleep(1420);
-//                 drivetrain.drive(0, 0, 0);
-//
-//
-//                 //put pixle next by object
-//                 intake.run(OuttakeSpeed* 0.7, 0);
-//                 Thread.sleep(1700);
-//                 intake.run(0, 0);
-//
-//// left
-//                 drivetrain.drive(Back_Speed, 0, 0);
-//                 Thread.sleep(1900);
-//                 drivetrain.drive(0, 0, 0);
-//
-//
-//                 drivetrain.drive(Forward_Speed, 0, 0);
-//                 Thread.sleep(400);
-//                 drivetrain.drive(0, 0, 0);
-//
-//                 drivetrain.drive(0, Left_Speed, 0);
-//                 Thread.sleep(200);
-//                 drivetrain.drive(0, 0, 0);
-//
-//                 run_backdrop();
-//
-//                 drivetrain.drive(0, Right_Speed, 0);
-//                 Thread.sleep(2000);
-//                 drivetrain.drive(0, 0, 0);
-//
-//
-//                 drivetrain.drive(Back_Speed*2, 0, 0);
-//                 Thread.sleep(1000);
-//                 drivetrain.drive(0, 0, 0);
+
          }
             visionPortal.close();
 
@@ -378,7 +331,7 @@ public class Auto_Blue_top extends LinearOpMode {
 
 
     }
-    ///////////////// BACK DOROP//////////
+    ///////////////// BACK DROP//////////
     private void initTfod() {
 
         // Create the TensorFlow processor by using a builder.
