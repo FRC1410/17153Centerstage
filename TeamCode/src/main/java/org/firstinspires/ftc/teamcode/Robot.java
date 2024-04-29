@@ -2,12 +2,14 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
 
 import org.firstinspires.ftc.teamcode.SubSystems.Backet;
 import org.firstinspires.ftc.teamcode.SubSystems.Drivetrain;
 import org.firstinspires.ftc.teamcode.SubSystems.ServoBucket;
 import org.firstinspires.ftc.teamcode.SubSystems.Intake;
 import org.firstinspires.ftc.teamcode.SubSystems.ServoDrone;
+import org.firstinspires.ftc.teamcode.SubSystems.TurretServo;
 
 @TeleOp
 public class Robot extends OpMode {
@@ -19,6 +21,8 @@ public class Robot extends OpMode {
 
     Intake intake = new Intake();
     ServoDrone drone = new ServoDrone();
+
+    TurretServo turretServo = new TurretServo();
 
 
 
@@ -34,6 +38,8 @@ public class Robot extends OpMode {
         servoBucket.init(hardwareMap);
         intake.init(hardwareMap);
         drone.init(hardwareMap);
+        turretServo.init(hardwareMap);
+
     }
 
 
@@ -56,6 +62,8 @@ public class Robot extends OpMode {
 
         //SETS THE PLANE TO GAMEPAD 2 (A/B) BUTTONS
         drone.runServo(gamepad2.a,gamepad2.b);
+
+        turretServo.runServoTurret(gamepad2.left_trigger,gamepad2.right_trigger);
 
     }
 }
